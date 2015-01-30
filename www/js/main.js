@@ -8,7 +8,17 @@ jQuery('#huge').on('click tap touch', function(){
 
     randomHuge = Math.floor(Math.random() * 10) + 1;
     jQuery('.hugeaudio' + randomHuge).get(0).currentTime = 0;
-    jQuery('.hugeaudio' + randomHuge).get(0).play();
+    // jQuery('.hugeaudio' + randomHuge).get(0).play();
+    var soundId = 'huge1';
+
+    var my_media = new Media("/android_asset/www/"+soundId+".mp3",
+        function() {
+          navigator.notification.alert('Success!', alertDismissed);
+        },
+        function(err) {
+        navigator.notification.alert('Error!', alertDismissed);
+    });
+    my_media.play();
 
     //Animation can add distances to pre-defined properties
     jQuery(this).find('img').animate({

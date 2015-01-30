@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Huge</title>
+    <style>
+        body {position: relative; text-align: center; overflow: hidden; background: #ce0f42; background: linear-gradient(to bottom, #ce0f42, #7f0929);}
+        h1, h2, h3, h4, h5, h6, p, span, a {font-family: 'Open Sans', sans-serif;}
+        .billywrapper {display: inline-block; position: relative; text-align: center; width: 100%; max-width: 728px;}
+            #huge {position: relative; display: block; width: 300px; height: 270px; text-align: center; margin: 0 auto;}
+                /*#huge:before {content: ''; background: url('http://placehold.it/100x150') center center no-repeat; position: absolute; left: -75px; display: block; width: 100px; height: 270px;}
+                #huge:after {content: ''; background: url('http://placehold.it/100x150') center center no-repeat; position: absolute; right: -75px; display: block; width: 100px; height: 270px;}*/
+            .billywrapper p {color: #fff; font-size: 36px; line-height: 52px; text-transform: uppercase;}
+                .billywrapper p strong {font-size: 72px;}
+            .hugecredit {position: relative; top: 100px; margin: 0 auto; width: 100%; max-width: 728px;}
+                .hugecredit img {width: 100%;}
+                .hugecredit .tabletcredit {display: block;}
+                .hugecredit .mobilecredit {display: none;}
+        @media only screen and (max-width: 640px) {
+            .billywrapper p {font-size: 21px; line-height: 36px;}
+                .billywrapper p strong {font-size: 48px;}
+            .hugecredit .tabletcredit {display: none;}
+            .hugecredit .mobilecredit {display: block;}
+        }
+    </style>
+    <!--
+    TODO:
+    - Analytics
+    -->
+    </head>
+    <body>
+        <div class="billywrapper">
+            <a id="huge" href="#"><img src="images/billy.png"/></a>
+            <p>
+                Click on Billy to hear him<br/>
+                <strong>"huge"!</strong>
+            </p>
+
+            <audio class="hugeaudio1"><source src="audio/huge1.mp3" type="audio/mpeg"></audio>
+            <audio class="hugeaudio2"><source src="audio/huge2.mp3" type="audio/mpeg"></audio>
+            <audio class="hugeaudio3"><source src="audio/huge3.mp3" type="audio/mpeg"></audio>
+            <audio class="hugeaudio4"><source src="audio/huge4.mp3" type="audio/mpeg"></audio>
+            <audio class="hugeaudio5"><source src="audio/huge5.mp3" type="audio/mpeg"></audio>
+            <audio class="hugeaudio6"><source src="audio/huge6.mp3" type="audio/mpeg"></audio>
+            <audio class="hugeaudio7"><source src="audio/huge7.mp3" type="audio/mpeg"></audio>
+            <audio class="hugeaudio8"><source src="audio/huge8.mp3" type="audio/mpeg"></audio>
+            <audio class="hugeaudio9"><source src="audio/huge9.mp3" type="audio/mpeg"></audio>
+            <audio class="hugeaudio10"><source src="audio/huge10.mp3" type="audio/mpeg"></audio>
+        </div>
+
+        <div class="hugecredit">
+            <a class="tabletcredit" href="#"><img src="http://placehold.it/728x90"/></a>
+            <a class="mobilecredit" href="#"><img src="http://placehold.it/640x150"/></a>
+        </div>
+
+        <script src="js/jquery.js"></script>
+        <script src="js/jqueryui.js"></script>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>

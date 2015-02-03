@@ -21,6 +21,6 @@
     
     <preference name="permissions" value="none"/>
 
-    <preference name="orientation" value="portrait" />
+    <!-- <preference name="orientation" value="portrait" /> -->
 
 </widget>

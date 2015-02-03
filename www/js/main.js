@@ -2,6 +2,8 @@ jQuery('body').css('height', window.innerHeight);
 
 jQuery('#huge').on('click tap touch', function(){
 
+    alert('started');
+
     jQuery('audio').each(function() {
         jQuery(this).get(0).pause();
     });

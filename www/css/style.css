@@ -7,7 +7,7 @@ h1, h2, h3, h4, h5, h6, p, span, a {font-family: 'Open Sans', sans-serif;}
 .billywrapper p {color: #fff; font-size: 36px; line-height: 52px; text-transform: uppercase;}
 .billywrapper p strong {font-size: 72px;}
 .hugecredit {position: relative; top: 100px; margin: 0 auto; width: 100%; max-width: 728px;}
-.hugecredit img {width: 100%;}
+.hugecredit img {width: 100%; display: block;}
 .hugecredit .tabletcredit {display: block;}
 .hugecredit .mobilecredit {display: none;}
 

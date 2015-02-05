@@ -29,40 +29,11 @@ jQuery('#huge').on('click tap touch', function(){
 });
 
 
-// Wait for Cordova to connect with the device
-//
-// document.addEventListener("deviceready",onDeviceReady,false);
-// function onDeviceReady() {
-//     shake.startWatch(shaker);
-// }
+var onShake = function () {
+  // Code fired when a shake is detected
+  alert('shake');
+};
 
-// function shaker(){
-//     alert('shake');
-// }
-
-
-
-// Wait for device API libraries to load
-//
-document.addEventListener("deviceready", onDeviceReady, false);
-
-// device APIs are available
-//
-function onDeviceReady() {
-    navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
-}
-
-// onSuccess: Get a snapshot of the current acceleration
-//
-function onSuccess(acceleration) {
-    alert('Acceleration X: ' + acceleration.x + '\n' +
-          'Acceleration Y: ' + acceleration.y + '\n' +
-          'Acceleration Z: ' + acceleration.z + '\n' +
-          'Timestamp: '      + acceleration.timestamp + '\n');
-}
-
-// onError: Failed to get the acceleration
-//
-function onError() {
-    alert('onError!');
-}
+// Start watching for shake gestures and call "onShake"
+// with a shake sensitivity of 40 (optional, default 30)
+shake.startWatch(onShake, 40);

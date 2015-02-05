@@ -28,7 +28,7 @@ jQuery('#huge').on('click tap touch', function(){
     return false;
 });
 
-
+alert ('start');
 var onShake = function () {
   // Code fired when a shake is detected
   alert('shake');
@@ -36,4 +36,4 @@ var onShake = function () {
 // Start watching for shake gestures and call "onShake"
 shake.startWatch(onShake);
 // Stop watching for shake gestures
-shake.stopWatch();
+// shake.stopWatch();

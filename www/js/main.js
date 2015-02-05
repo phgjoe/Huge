@@ -56,7 +56,7 @@ function stopWatch() {
  
 // Success
 function onSuccess(acceleration) {
-    var element = document.getElementById('accelerometer');
+    var element = document.getElementById('huge');
     element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
                         'Acceleration Y: ' + acceleration.y + '<br />' +
                         'Acceleration Z: ' + acceleration.z + '<br />' +

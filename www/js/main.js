@@ -28,12 +28,42 @@ jQuery('#huge').on('click tap touch', function(){
     return false;
 });
 
-
-var onShake = function () {
-  // Code fired when a shake is detected
-  alert('shake');
-};
-
-// Start watching for shake gestures and call "onShake"
-// with a shake sensitivity of 40 (optional, default 30)
-shake.startWatch(onShake, 40);
+//wait for PhoneGap to load
+document.addEventListener("deviceready", loaded, false);
+ 
+// PhoneGap is ready
+function loaded() {
+    startWatch();
+}
+ 
+// Start watching the acceleration
+ 
+function startWatch() {
+ 
+    // Update acceleration every 3 seconds
+    var options = { frequency: 3000 };
+ 
+    watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+}
+ 
+// Stop watching the acceleration
+function stopWatch() {
+    if (watchID) {
+        navigator.accelerometer.clearWatch(watchID);
+        watchID = null;
+    }
+}
+ 
+// Success
+function onSuccess(acceleration) {
+    var element = document.getElementById('accelerometer');
+    element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
+                        'Acceleration Y: ' + acceleration.y + '<br />' +
+                        'Acceleration Z: ' + acceleration.z + '<br />' +
+                        'Timestamp: '      + acceleration.timestamp + '<br />';
+}
+ 
+ // Error
+function onError() {
+    alert('onError!');
+}

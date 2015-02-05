@@ -1,7 +1,8 @@
 jQuery('body').css('height', window.innerHeight);
 
-jQuery('#huge').on('click tap touch', function(){
+jQuery('#huge').on('click tap touch', huge);
 
+function huge(){
     jQuery('audio').each(function() {
         jQuery(this).get(0).pause();
     });
@@ -26,7 +27,7 @@ jQuery('#huge').on('click tap touch', function(){
     });
 
     return false;
-});
+}
 
 
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -52,7 +53,7 @@ function startWatch() {
     if (changes.x > bound && changes.y > bound) {
       stopWatch();
       // We are relying on a hidden button with an ID of shake to be present on the Profound UI Rich Display File screen
-      alert('shake it off');
+      huge();
       setTimeout(startWatch, 3000);
     }
     previousReading = {

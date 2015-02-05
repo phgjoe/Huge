@@ -28,63 +28,47 @@ jQuery('#huge').on('click tap touch', function(){
     return false;
 });
 
-// //wait for PhoneGap to load
-// document.addEventListener("deviceready", loaded, false);
- 
-// // PhoneGap is ready
-// function loaded() {
-//     startWatch();
-// }
- 
-// // Start watching the acceleration
- 
-// function startWatch() {
- 
-//     // Update acceleration every 3 seconds
-//     var options = { frequency: 3000 };
- 
-//     watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-// }
- 
-// // Stop watching the acceleration
-// function stopWatch() {
-//     if (watchID) {
-//         navigator.accelerometer.clearWatch(watchID);
-//         watchID = null;
-//     }
-// }
- 
-// // Success
-// function onSuccess(acceleration) {
-//     var element = document.getElementById('accelerometer');
-//     element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
-//                         'Acceleration Y: ' + acceleration.y + '<br />' +
-//                         'Acceleration Z: ' + acceleration.z + '<br />' +
-//                         'Timestamp: '      + acceleration.timestamp + '<br />';
-// }
- 
-//  // Error
-// function onError() {
-//     alert('onError!');
-// }
 
-//wait for PhoneGap to load
-document.addEventListener("deviceready", startShaking, false);
-
-function startShaking(){
-    var myShakeEvent = new Shake({
-        threshold: 15, // optional shake strength threshold
-        timeout: 1000 // optional, determines the frequency of event generation
-    });
-
-    myShakeEvent.start();
-
-    window.addEventListener('shake', shakeEventDidOccur, false);
-
-    //function to call when shake occurs
-    function shakeEventDidOccur () {
-
-        //put your own code here etc.
-        alert('shake!');
-    }
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+  startWatch();
 }
+ 
+var watchID;
+function startWatch() {
+  var previousReading = {
+    x: null,
+    y: null,
+    z: null
+  }
+  var options = { frequency: 250 };  // Update acceleration every quarter second
+  watchID = navigator.accelerometer.watchAcceleration(function onSuccess(acceleration) {
+    var changes = {},
+    bound = 4;  // this controls the sensitivity for detecting the shake event
+    if (previousReading.x !== null) {
+      changes.x = Math.abs(previousReading.x, acceleration.x);
+      changes.y = Math.abs(previousReading.y, acceleration.y);
+    }
+    if (changes.x > bound && changes.y > bound) {
+      stopWatch();
+      // We are relying on a hidden button with an ID of shake to be present on the Profound UI Rich Display File screen
+      alert('shake it off');
+      setTimeout(startWatch, 3000);
+    }
+    previousReading = {
+      x: acceleration.x,
+      y: acceleration.y,
+      z: acceleration.z
+    }
+  }, function onError() {
+    alert('Some problem has occurred in reading the accelerometer.');
+  }, options);
+}
+ 
+function stopWatch() {
+  if (watchID) {
+    navigator.accelerometer.clearWatch(watchID);
+    watchID = null;
+  }
+}
+

@@ -29,41 +29,41 @@ jQuery('#huge').on('click tap touch', function(){
 });
 
 //wait for PhoneGap to load
-// document.addEventListener("deviceready", loaded, false);
+document.addEventListener("deviceready", loaded, false);
  
-// // PhoneGap is ready
-// function loaded() {
-//     startWatch();
-// }
+// PhoneGap is ready
+function loaded() {
+    startWatch();
+}
  
-// // Start watching the acceleration
+// Start watching the acceleration
  
-// function startWatch() {
+function startWatch() {
  
-//     // Update acceleration every 3 seconds
-//     var options = { frequency: 3000 };
+    // Update acceleration every 3 seconds
+    var options = { frequency: 3000 };
  
-//     watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-// }
+    watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+}
  
-// // Stop watching the acceleration
-// function stopWatch() {
-//     if (watchID) {
-//         navigator.accelerometer.clearWatch(watchID);
-//         watchID = null;
-//     }
-// }
+// Stop watching the acceleration
+function stopWatch() {
+    if (watchID) {
+        navigator.accelerometer.clearWatch(watchID);
+        watchID = null;
+    }
+}
  
-// // Success
-// function onSuccess(acceleration) {
-//     var element = document.getElementById('accelerometer');
-//     element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
-//                         'Acceleration Y: ' + acceleration.y + '<br />' +
-//                         'Acceleration Z: ' + acceleration.z + '<br />' +
-//                         'Timestamp: '      + acceleration.timestamp + '<br />';
-// }
+// Success
+function onSuccess(acceleration) {
+    var element = document.getElementById('accelerometer');
+    element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
+                        'Acceleration Y: ' + acceleration.y + '<br />' +
+                        'Acceleration Z: ' + acceleration.z + '<br />' +
+                        'Timestamp: '      + acceleration.timestamp + '<br />';
+}
  
-//  // Error
-// function onError() {
-//     alert('onError!');
-// }
+ // Error
+function onError() {
+    alert('onError!');
+}

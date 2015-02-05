@@ -28,12 +28,14 @@ jQuery('#huge').on('click tap touch', function(){
     return false;
 });
 
-alert ('start');
-var onShake = function () {
-  // Code fired when a shake is detected
-  alert('shake');
-};
-// Start watching for shake gestures and call "onShake"
-shake.startWatch(onShake);
-// Stop watching for shake gestures
-// shake.stopWatch();
+
+// Wait for Cordova to connect with the device
+//
+document.addEventListener("deviceready",onDeviceReady,false);
+function onDeviceReady() {
+    shake.startWatch(shaker);
+}
+
+function shaker(){
+    alert('shake');
+}

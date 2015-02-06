@@ -12,14 +12,14 @@ function huge(){
     jQuery('.hugeaudio' + randomHuge).get(0).play();
 
     //Animation can add distances to pre-defined properties
-    jQuery(this).find('img').animate({
+    jQuery('#huge').find('img').animate({
         width: '-=30px',
         height: '-=39px',
         }, 100, 'swing', function() {
         // function code on animation complete
     });
 
-    jQuery(this).delay(100).find('img').animate({
+    jQuery('#huge').delay(100).find('img').animate({
         width: '+=30px',
         height: '+=39px',
         }, 1000, 'easeOutElastic', function() {

@@ -10,8 +10,8 @@ function huge(){
     });
 
     randomHuge = Math.floor(Math.random() * 10) + 1;
-    jQuery('.hugeaudio' + randomHuge).get(0).currentTime = 0;
-    jQuery('.hugeaudio' + randomHuge).get(0).play();
+    jQuery('#huge .hugeaudio' + randomHuge).get(0).currentTime = 0;
+    jQuery('#huge .hugeaudio' + randomHuge).get(0).play();
 
     //Animation can add distances to pre-defined properties
     jQuery('#huge').find('img').animate({

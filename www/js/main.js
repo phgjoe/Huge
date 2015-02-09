@@ -1,10 +1,10 @@
 jQuery(document).ready(function($) {
 
-  huge();
-
   jQuery('body').css('height', window.innerHeight);
 
   jQuery('#huge').on('click tap touch', huge);
+
+  jQuery('#huge').trigger('touch');
 
   //Accelerometer Stuff
   document.addEventListener("deviceready", onDeviceReady, false);

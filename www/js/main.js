@@ -61,7 +61,6 @@ jQuery('body').css('height', window.innerHeight);
 
       var randomHuge = Math.floor(Math.random() * 10) + 1;
       jQuery('.hugeaudio' + randomHuge).get(0).currentTime = 0;
-      alert(jQuery('.hugeaudio' + randomHuge).get(0).currentTime);
       jQuery('.hugeaudio' + randomHuge).get(0).play();
 
       //Animation can add distances to pre-defined properties

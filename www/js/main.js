@@ -48,12 +48,13 @@ function startWatch() {
 
   var options = { frequency: 250 };  // Update acceleration every quarter second
   watchID = navigator.accelerometer.watchAcceleration(function onSuccess(acceleration) {
-    var changes = {},
-    bound = 4;  // this controls the sensitivity for detecting the shake event
+    var changes = {};
+    var bound = 4;  // this controls the sensitivity for detecting the shake event
     if (previousReading.x !== null) {
       changes.x = Math.abs(previousReading.x, acceleration.x);
       changes.y = Math.abs(previousReading.y, acceleration.y);
     }
+    alert(bound);
     if (changes.x > bound && changes.y > bound) {
       stopWatch();
       // We are relying on a hidden button with an ID of shake to be present on the Profound UI Rich Display File screen

@@ -48,7 +48,6 @@ function startWatch() {
 
   var options = { frequency: 250 };  // Update acceleration every quarter second
   watchID = navigator.accelerometer.watchAcceleration(function onSuccess(acceleration) {
-    alert('onSuccess');
     var changes = {},
     bound = 4;  // this controls the sensitivity for detecting the shake event
     if (previousReading.x !== null) {

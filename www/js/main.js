@@ -5,9 +5,9 @@ jQuery('#huge').on('click tap touch', huge);
 
 //main function that plays random audio
 function huge(){
-    // jQuery('audio').each(function() {
-    //     jQuery(this).get(0).pause();
-    // });
+    jQuery('audio').each(function() {
+        jQuery(this).get(0).pause();
+    });
 
     randomHuge = Math.floor(Math.random() * 10) + 1;
     jQuery('.hugeaudio' + randomHuge).get(0).currentTime = 0;
@@ -50,10 +50,7 @@ function startWatch() {
   watchID = navigator.accelerometer.watchAcceleration(function onSuccess(acceleration) {
     var changes = {};
     var bound = 4;  // this controls the sensitivity for detecting the shake event
-    // alert('Acceleration X: ' + acceleration.x + '\n' +
-    //           'Acceleration Y: ' + acceleration.y + '\n' +
-    //           'Acceleration Z: ' + acceleration.z + '\n' +
-    //           'Timestamp: '      + acceleration.timestamp + '\n');
+
     if (previousReading.x !== null) {
       changes.x = Math.abs(previousReading.x, acceleration.x);
       changes.y = Math.abs(previousReading.y, acceleration.y);
@@ -62,7 +59,7 @@ function startWatch() {
       stopWatch();
       // We are relying on a hidden button with an ID of shake to be present on the Profound UI Rich Display File screen
       huge();
-      setTimeout(startWatch, 3000);
+      setTimeout(startWatch, 30000);
     }
     previousReading = {
       x: acceleration.x,

@@ -5,13 +5,13 @@ jQuery('#huge').on('click tap touch', huge);
 
 //main function that plays random audio
 function huge(){
-    jQuery('audio').each(function() {
-        jQuery(this).get(0).pause();
-    });
+    // jQuery('audio').each(function() {
+    //     jQuery(this).get(0).pause();
+    // });
 
     randomHuge = Math.floor(Math.random() * 10) + 1;
-    jQuery('#huge .hugeaudio' + randomHuge).get(0).currentTime = 0;
-    jQuery('#huge .hugeaudio' + randomHuge).get(0).play();
+    jQuery('.hugeaudio' + randomHuge).get(0).currentTime = 0;
+    jQuery('.hugeaudio' + randomHuge).get(0).play();
 
     //Animation can add distances to pre-defined properties
     jQuery('#huge').find('img').animate({

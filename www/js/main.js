@@ -34,13 +34,13 @@ function huge(){
 //Accelerometer Stuff
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
-  alert('start');
-  startWatch();
+    alert('start');
+    startWatch();
 }
  
 var watchID;
 function startWatch() {
-  var previousReading = {
+    var previousReading = {
     x: null,
     y: null,
     z: null

@@ -54,7 +54,6 @@ function startWatch() {
       changes.x = Math.abs(previousReading.x, acceleration.x);
       changes.y = Math.abs(previousReading.y, acceleration.y);
     }
-    alert(bound);
     if (changes.x > bound && changes.y > bound) {
       stopWatch();
       // We are relying on a hidden button with an ID of shake to be present on the Profound UI Rich Display File screen

@@ -52,7 +52,6 @@ function startWatch() {
     if (previousReading.x !== null) {
       changes.x = Math.abs(previousReading.x, acceleration.x);
       changes.y = Math.abs(previousReading.y, acceleration.y);
-      alert(x);
     }
     if (changes.x > bound && changes.y > bound) {
       stopWatch();

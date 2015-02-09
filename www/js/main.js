@@ -7,7 +7,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     startWatch();
 }
- 
+
 var watchID;
 
 function startWatch() {
@@ -41,7 +41,7 @@ function startWatch() {
     alert('Some problem has occurred in reading the accelerometer.');
   }, options);
 }
- 
+
 function stopWatch() {
   if (watchID) {
     navigator.accelerometer.clearWatch(watchID);
@@ -57,21 +57,21 @@ function huge(){
         jQuery(this).get(0).pause();
     });
 
-    randomHuge = Math.floor(Math.random() * 10) + 1;
+    var randomHuge = Math.floor(Math.random() * 10) + 1;
     jQuery('.hugeaudio' + randomHuge).get(0).currentTime = 0;
     jQuery('.hugeaudio' + randomHuge).get(0).play();
 
     //Animation can add distances to pre-defined properties
     jQuery('#huge').find('img').animate({
         width: '-=30px',
-        height: '-=39px',
+        height: '-=39px'
         }, 100, 'swing', function() {
         // function code on animation complete
     });
 
     jQuery('#huge').delay(100).find('img').animate({
         width: '+=30px',
-        height: '+=39px',
+        height: '+=39px'
         }, 1000, 'easeOutElastic', function() {
         // function code on animation complete
     });

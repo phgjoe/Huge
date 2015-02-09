@@ -34,7 +34,6 @@ function huge(){
 //Accelerometer Stuff
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
-    alert('start');
     startWatch();
 }
  
@@ -45,8 +44,8 @@ function startWatch() {
     x: null,
     y: null,
     z: null
-  }
-  alert('startWatch');
+  };
+
   var options = { frequency: 250 };  // Update acceleration every quarter second
   watchID = navigator.accelerometer.watchAcceleration(function onSuccess(acceleration) {
     alert('onSuccess');

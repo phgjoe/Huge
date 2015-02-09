@@ -2,6 +2,8 @@ jQuery('body').css('height', window.innerHeight);
 
 jQuery('#huge').on('click tap touch', huge);
 
+
+//main function that plays random audio
 function huge(){
     jQuery('audio').each(function() {
         jQuery(this).get(0).pause();
@@ -29,9 +31,10 @@ function huge(){
     return false;
 }
 
-
+//Accelerometer Stuff
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
+  alert('start');
   startWatch();
 }
  
@@ -49,6 +52,7 @@ function startWatch() {
     if (previousReading.x !== null) {
       changes.x = Math.abs(previousReading.x, acceleration.x);
       changes.y = Math.abs(previousReading.y, acceleration.y);
+      alert(x);
     }
     if (changes.x > bound && changes.y > bound) {
       stopWatch();
@@ -72,4 +76,4 @@ function stopWatch() {
     watchID = null;
   }
 }
-
+//End Accelerometer Stuff

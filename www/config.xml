@@ -3,7 +3,7 @@
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "com.pinckneyhugo.huge"
     versionCode = "10" 
-    version     = "1.1.17" >
+    version     = "1.1.18" >
 
     <!-- versionCode is optional and Android only -->
 
@@ -13,7 +13,7 @@
         A huge app for Fuccillo
     </description>
 
-    <author href="http://7inckneyhugo.com" email="joe@pinckneyhugo.com">
+    <author href="http://pinckneyhugo.com" email="joe@pinckneyhugo.com">
         PinckneyHugo
     </author>
 

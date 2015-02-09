@@ -10,6 +10,7 @@ function huge(){
     });
 
     randomHuge = Math.floor(Math.random() * 10) + 1;
+    alert(randomHuge);
     jQuery('.hugeaudio' + randomHuge).get(0).currentTime = 0;
     jQuery('.hugeaudio' + randomHuge).get(0).play();
 

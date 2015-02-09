@@ -4,8 +4,6 @@ jQuery(document).ready(function($) {
 
   jQuery('#huge').on('click tap touch', huge);
 
-  jQuery('#huge').trigger('touch');
-
   //Accelerometer Stuff
   document.addEventListener("deviceready", onDeviceReady, false);
   function onDeviceReady() {
@@ -62,7 +60,7 @@ jQuery(document).ready(function($) {
 
       var randomHuge = Math.floor(Math.random() * 10) + 1;
       jQuery('.hugeaudio' + randomHuge).get(0).currentTime = 0;
-      // alert('here');
+      alert('here');
       jQuery('.hugeaudio' + randomHuge).get(0).play();
 
       //Animation can add distances to pre-defined properties

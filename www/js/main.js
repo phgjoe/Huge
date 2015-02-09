@@ -29,9 +29,8 @@ jQuery('body').css('height', window.innerHeight);
         changes.y = Math.abs(previousReading.y, acceleration.y);
       }
       if (changes.x > bound && changes.y > bound) {
-        stopWatch();
-        // We are relying on a hidden button with an ID of shake to be present on the Profound UI Rich Display File screen
         huge();
+        stopWatch();
         setTimeout(startWatch, 3000);
       }
       previousReading = {

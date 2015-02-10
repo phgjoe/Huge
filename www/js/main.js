@@ -2,7 +2,7 @@ jQuery(document).ready(function($) {
 
   jQuery('body').css('height', window.innerHeight);
 
-  jQuery('#huge').on('click tap touch', huge);
+  //jQuery('#huge').on('click tap touch', huge);
 
   //Accelerometer Stuff
   document.addEventListener("deviceready", onDeviceReady, false);
@@ -29,6 +29,7 @@ jQuery(document).ready(function($) {
         changes.y = Math.abs(previousReading.y, acceleration.y);
       }
       if (changes.x > bound && changes.y > bound) {
+        alert('changes');
         huge();
         stopWatch();
         setTimeout(startWatch, 3000);

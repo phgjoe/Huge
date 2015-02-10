@@ -87,13 +87,13 @@ jQuery(document).ready(function() {
 });
 
 function centerBilly(){
-  parent = window;
-  console.log($(parent).height());
-  console.log(jQuery('#huge img').outerHeight());
-  console.log(jQuery('.hugecredit').outerHeight());
-  jQuery('#huge img').css({
-        "position": "absolute",
-        "top": ((($(parent).height() - jQuery('#huge img').outerHeight()) / 2) - jQuery('.hugecredit').outerHeight() +  "px"),
-        "left": ((($(parent).width() - jQuery('#huge img').outerWidth()) / 2) - jQuery('.hugecredit').outerWidth() + "px")
-    });
+  // parent = window;
+  // console.log($(parent).height());
+  // console.log(jQuery('#huge img').outerHeight());
+  // console.log(jQuery('.hugecredit').outerHeight());
+  // jQuery('#huge img').css({
+  //       "position": "absolute",
+  //       "top": ((($(parent).height() - jQuery('#huge img').outerHeight()) / 2) - jQuery('.hugecredit').outerHeight() +  "px"),
+  //       "left": ((($(parent).width() - jQuery('#huge img').outerWidth()) / 2) - jQuery('.hugecredit').outerWidth() + "px")
+  //   });
 }

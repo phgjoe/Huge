@@ -2,7 +2,7 @@ jQuery(document).ready(function() {
 
   jQuery('body').css('height', window.innerHeight);
 
-  //jQuery('#huge').on('click tap touch', huge);
+  jQuery('#huge').on('click tap touch', huge);
 
   //Accelerometer Stuff
   document.addEventListener("deviceready", onDeviceReady, false);
@@ -29,7 +29,7 @@ jQuery(document).ready(function() {
         changes.y = Math.abs(previousReading.y, acceleration.y);
       }
       if (changes.x > bound && changes.y > bound) {
-        alert('changes');
+        // alert('changes');
         huge();
         stopWatch();
         setTimeout(startWatch, 3000);
@@ -61,7 +61,7 @@ jQuery(document).ready(function() {
 
       var randomHuge = Math.floor(Math.random() * 10) + 1;
       jQuery('.hugeaudio' + randomHuge).get(0).currentTime = 0;
-      alert('here');
+      // alert('here');
       jQuery('.hugeaudio' + randomHuge).get(0).play();
 
       //Animation can add distances to pre-defined properties

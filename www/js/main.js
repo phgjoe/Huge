@@ -2,6 +2,8 @@ jQuery(document).ready(function() {
 
   jQuery('body').css('height', window.innerHeight);
 
+  centerBilly();
+
   jQuery('#huge').on('click tap touch', huge);
 
   //Accelerometer Stuff
@@ -83,3 +85,12 @@ jQuery(document).ready(function() {
   }
 
 });
+
+function centerBilly(){
+  parent = window;
+  jQuery('#huge img').css({
+        "position": "absolute",
+        "top": ((($(parent).height() - jQuery('#huge img').outerHeight()) / 2) + $(parent).scrollTop() + "px"),
+        "left": ((($(parent).width() - jQuery('#huge img').outerWidth()) / 2) + $(parent).scrollLeft() + "px")
+    });
+}

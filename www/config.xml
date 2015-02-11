@@ -3,7 +3,7 @@
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "com.pinckneyhugo.huge"
     versionCode = "10" 
-    version     = "1.2.02" >
+    version     = "1.2.03" >
 
     <name>Huge</name>
 
@@ -26,5 +26,8 @@
     <gap:splash src="splash.png" />
 
     <plugin name="Accelerometer" value="org.apache.cordova.AccelListener" />
+
+    <gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
+        <preference name="StatusBarOverlaysWebView" value="true" />
 
 </widget>

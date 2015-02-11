@@ -15,11 +15,11 @@ a {-webkit-tap-highlight-color: rgba(0,0,0,0); }
 
 .hugecredit {position: fixed; bottom: 0px; margin: 0 auto; width: 100%;}
 .hugecredit img {width: 100%; display: block;}
-.hugecredit .tabletcredit {display: block;}
+.hugecredit .tabletcredit {display: none;}
 .hugecredit .mobilecredit {display: none;}
 
 
 @media only screen and (max-width: 640px) {
     .hugecredit .tabletcredit {display: none;}
-    .hugecredit .mobilecredit {display: block;}
+    .hugecredit .mobilecredit {display: none;}
 }
